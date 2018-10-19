@@ -1,4 +1,4 @@
-docker run -ti ubuntu:18.04
+FROM ubuntu:18.04
 RUN apt-get update && apt-get install -y python
 RUN apt-get install -y build-essential libxi-dev libglu1-mesa-dev libglew-dev pkg-config
 
