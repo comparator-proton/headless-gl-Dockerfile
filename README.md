@@ -13,6 +13,6 @@ Dockerfile for headless nodejs webgl server.
 
 Для рендера требует запуск в графическом окружении через *xvfb*:
 
-**dumb-init --xvfb-run -s "-ac -screen 0 1280x1024x24" node /webgl_apps/test.js**
+**$ dumb-init --xvfb-run -s "-ac -screen 0 1280x1024x24" node /webgl_apps/test.js**
 
 Здесь *dumb-init* - некая приблуда для более надежного напуска процессов. До конца не понял.
