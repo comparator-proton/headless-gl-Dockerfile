@@ -1,2 +1,18 @@
 # headless-gl-Dockerfile
-Dockerfile for headless nodejs webgl server
+Dockerfile for headless nodejs webgl server.
+
+Образ получен из ubuntu:18.04.
+
+Предназначен для запуска тестового приложения с webgl рендерингом на стороне сервера в контейнере
+Сборка для работы кода headless-gl окружении. 
+
+глобальная установка **npm install -g gl** не проходит по неясной причине. Установка пакета выполнена локально в **/webgl_apps**.
+Свои приложения с gl-контекстом можно размещать в **/webgl_apps/subapps**.
+
+Запуск с пробросом папки и консолью: **docker run -ti -v <хост-папка>:/webgl_apps/subapps <имя образа>**
+
+Для рендера требует запуск в графическом окружении через *xvfb*:
+
+**dumb-init --xvfb-run -s "-ac -screen 0 1280x1024x24" node /webgl_apps/test.js**
+
+Здесь *dumb-init* - некая приблуда для более надежного напуска процессов. До конца не понял.
